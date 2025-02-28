@@ -1,0 +1,56 @@
+<script>
+    document.getElementById("generate-btn").addEventListener("click", async function() {
+        // Get the input values
+        const firstName = document.getElementById("first-name").value;
+        const lastName = document.getElementById("last-name").value;
+        const aboutMe = document.getElementById("about-me").value;
+        const skills = document.getElementById("skills").value;
+        const experience = document.getElementById("experience").value;
+        const education = document.getElementById("education").value;
+        const linkedin = document.getElementById("linkedin").value;
+        const github = document.getElementById("github").value;
+        const photo = document.getElementById("photo").files[0]; // For photo file
+        const template = document.getElementById("template").value;
+
+        // Prepare form data to send
+        const formData = new FormData();
+        formData.append('firstName', firstName);
+        formData.append('lastName', lastName);
+        formData.append('aboutMe', aboutMe);
+        formData.append('skills', skills);
+        formData.append('experience', experience);
+        formData.append('education', education);
+        formData.append('linkedin', linkedin);
+        formData.append('github', github);
+        formData.append('template', template);
+
+        // If a photo is selected, convert it to base64 or upload the image separately
+        if (photo) {
+            const reader = new FileReader();
+            reader.onloadend = async function () {
+                formData.append('photo', reader.result);
+                
+                // Send data to the backend
+                const response = await fetch('/submit-resume', {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await response.json();
+                if (data.message) {
+                    alert('Resume generated and saved to the database!');
+                }
+            };
+            reader.readAsDataURL(photo); // Convert photo to base64
+        } else {
+            // If no photo is uploaded, send data without photo
+            const response = await fetch('/submit-resume', {
+                method: 'POST',
+                body: formData
+            });
+            const data = await response.json();
+            if (data.message) {
+                alert('Resume generated and saved to the database!');
+            }
+        }
+    });
+</script>

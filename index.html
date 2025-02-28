@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Resume Builder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="resume-container">
+        <div class="left-section">
+            <!-- Photo Section -->
+            <section class="photo">
+                <h3>Photo</h3>
+                <input type="file" id="photo" name="photo">
+            </section>
+
+            <!-- Skills Section -->
+            <section class="skills">
+                <h3>Skills</h3>
+                <input type="text" id="skills" name="skills" placeholder="HTML, CSS, JavaScript, React">
+            </section>
+
+            <!-- Soft Skills Section -->
+            <section class="soft-skills">
+                <h3>Soft Skills</h3>
+                <textarea id="soft-skills" name="soft-skills" placeholder="Enter your soft skills"></textarea>
+            </section>
+
+            <!-- Languages Known Section -->
+            <section class="languages">
+                <h3>Languages Known</h3>
+                <input type="text" id="languages" name="languages" placeholder="English, Spanish, etc.">
+            </section>
+
+            <!-- Interests Section -->
+            <section class="interests">
+                <h3>Interests</h3>
+                <textarea id="interests" name="interests" placeholder="Enter your interests"></textarea>
+            </section>
+        </div>
+
+        <div class="right-section">
+            <!-- Full information part -->
+            <section class="input-form">
+                <h2>Enter Your Information</h2>
+
+                <!-- Name Fields -->
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name" placeholder="Enter your first name">
+
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name" placeholder="Enter your last name">
+
+                <!-- Email Field -->
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+
+                <!-- Contact Number Field -->
+                <label for="contact-number">Contact Number:</label>
+                <input type="tel" id="contact-number" name="contact-number" placeholder="Enter your contact number">
+
+                <!-- About Me Section -->
+                <label for="about-me">About Me:</label>
+                <textarea id="about-me" name="about-me" placeholder="Tell us about yourself"></textarea>
+
+                <!-- Experience Section -->
+                <label for="experience">Experience:</label>
+                <textarea id="experience" name="experience" placeholder="Describe your work experience"></textarea>
+
+                <!-- Education Section -->
+                <label for="education">Education:</label>
+                <input type="text" id="education" name="education" placeholder="Your degree and school">
+
+                <!-- LinkedIn Profile -->
+                <label for="linkedin">LinkedIn Profile URL:</label>
+                <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/your-profile">
+
+                <!-- GitHub Profile -->
+                <label for="github">GitHub Profile URL:</label>
+                <input type="url" id="github" name="github" placeholder="https://github.com/your-profile">
+
+                <!-- Template Selection Section -->
+                <label for="template">Choose a Template:</label>
+                <select id="template" name="template">
+                    <option value="template1">Template 1</option>
+                    <option value="template2">Template 2</option>
+                    <option value="template3">Template 3</option>
+                    <option value="template4">Template 4</option>
+                    <option value="template5">Template 5</option>
+                </select>
+            </section>
+
+            <!-- Submit Button -->
+            <button id="generate-btn">Generate Resume</button>
+
+            <section id="generated-resume" class="generated-resume" style="display: none;"></section>
+
+            <!-- Download Button (hidden initially) -->
+            <button id="download-btn" style="display: none;">Download Resume</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <!-- <p>Contact: john.doe@example.com | LinkedIn | GitHub</p> -->
+    </footer>
+
+    <script>
+        document.getElementById("generate-btn").addEventListener("click", function () {
+            // Hide the left section
+            const leftSection = document.querySelector(".left-section");
+            leftSection.style.display = "none";
+
+            // Hide the generate button
+            this.style.display = "none";
+
+            // Create a FormData object to gather all the input data
+            const formData = new FormData();
+            formData.append("first-name", document.getElementById("first-name").value);
+            formData.append("last-name", document.getElementById("last-name").value);
+            formData.append("email", document.getElementById("email").value);
+            formData.append("contact-number", document.getElementById("contact-number").value);
+            formData.append("about-me", document.getElementById("about-me").value);
+            formData.append("skills", document.getElementById("skills").value);
+            formData.append("soft-skills", document.getElementById("soft-skills").value);
+            formData.append("experience", document.getElementById("experience").value);
+            formData.append("education", document.getElementById("education").value);
+            // formData.append("myproj", document.getElementById("myproj").value);
+            formData.append("linkedin", document.getElementById("linkedin").value);
+            formData.append("github", document.getElementById("github").value);
+            formData.append("photo", document.getElementById("photo").files[0]);
+            formData.append("template", document.getElementById("template").value);
+
+            // Send the form data to the Flask backend
+            fetch('/', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                // Display the generated resume
+                document.getElementById("generated-resume").innerHTML = data;
+                document.getElementById("generated-resume").style.display = "block";
+                document.querySelector(".input-form").style.display = "none";
+
+                // Show the download button
+                const downloadBtn = document.getElementById("download-btn");
+                downloadBtn.style.display = "inline-block";
+
+                // Add click event to download the resume
+                downloadBtn.addEventListener("click", function () {
+                    const blob = new Blob([data], { type: "text/html" });
+                    const url = URL.createObjectURL(blob);
+
+                    // Create a temporary link to trigger download
+                    const link = document.createElement("a");
+                    link.href = url;
+                    link.download = "resume.html";
+                    link.click();
+
+                    // Revoke the URL to free memory
+                    URL.revokeObjectURL(url);
+                });
+            })
+            .catch(error => console.error("Error generating resume:", error));
+        });
+    </script>
+</body>
+</html>

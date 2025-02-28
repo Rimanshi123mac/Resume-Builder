@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        
+      <div class="starter-template">
+        <img src="{{ photo_filename }}">
+        <h1 class="pb-0">{{first_name}} {{last_name}}</h1>
+        <hr class="bottom  mb-0" />
+        <p class="lead pb-4">• {{email}}  </p>
+        <p class="lead pb-4">• {{phone}}  </p>
+        
+        <div class="row text-left">
+        <div class="col-md-6">
+        
+          </div>
+        <div class="col-md-6">
+        
+          </div>
+          </div>
+        <hr/>
+        <h5 class="text-left text-uppercase text-center pb-0"><strong>• EXPERIENCE</strong> </h5>
+        <hr class="bottom"/>
+        <div class="row no-gutters">
+        <!-- <div class="col-sm-6 text-left h5"><strong>AT&amp;T, Austin, TX</strong></div> -->
+        <div class="col-sm-6 text-right">{{experience}}</div></div>
+      </div>
+     
+        <hr/>
+        <h5 class="text-left text-uppercase text-center pb-0">AWARDS</h5>
+        <hr class="bottom"/>
+      <div class="row no-gutters">
+        <div class="col-md-6 order-1">Key Contributor Award 2017</div>
+        
+</div>
+        <hr/>
+        <h5 class="text-left text-uppercase text-center pb-0">EDUCATION</h5>
+        <hr class="bottom"/>
+      <div class="row no-gutters">
+        <div class="col-md-10 ml-md-auto">
+<ul class="list-unstyled text-left">
+  <li><em>{{ education }}</em></li>
+  
+  <!-- <li><em>Associate of Applied Science, Electronics, Dean's List 3.91/4.00 (1995)</em></li> -->
+</ul>
+</div>
+</div>
+        <hr/>
+        <h5 class="text-left text-uppercase text-center pb-0">ADDITIONAL SKILLS AND Soft Skills</h5>
+        <hr class="bottom"/>
+        <div class="col-md-10 ml-md-auto">
+<ul class="text-left">
+  <li>{{ soft_skills }}</li>
+
+</ul>
+</div>
+<h5 class="text-left text-uppercase text-center pb-0">Social Links</h5>
+        <hr class="bottom"/>
+      <div class="row no-gutters">
+        <div class="col-md-6 order-1">
+          <p><a href="{{ linkedin }}" target="_blank">LinkedIn</a></p>
+          <p><a href="{{ github }}" target="_blank">GitHub</a></p>
+        </div>
+      </div>
+
+
+
+</main><!-- /.container -->
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - {{ first_name }} {{ last_name }}</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/static/css/template1.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="full-name">
+                <span class="first-name">{{ first_name }}</span>
+                <span class="last-name">{{ last_name }}</span>
+            </div>
+            <div class="contact-info">
+                <span class="email">Email: </span>
+                <span class="email-val">{{ email }}</span>
+                <span class="separator"></span>
+                <span class="phone">Phone: </span>
+                <span class="phone-val">{{ phone }}</span>
+            </div>
+            <div class="about">
+                <span class="position">Front-End Developer</span>
+                <span class="desc">{{ about_me }}</span>
+            </div>
+        </div>
+        <div class="details">
+            <div class="section">
+                <div class="section__title">Experience</div>
+                <div class="section__list">
+                    <div class="section__list-item">
+                        <div class="left">
+                            <div class="name">Your Company</div>
+                            <div class="addr">Location</div>
+                            <div class="duration">Duration</div>
+                        </div>
+                        <div class="right">
+                            <div class="name">Position</div>
+                            <div class="desc">{{ experience }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section__title">Education</div>
+                <div class="section__list">
+                    <div class="section__list-item">
+                        <!-- <div class="left">
+                            <div class="name">Your School</div>
+                            <div class="addr">Location</div>
+                            <div class="duration">Duration</div>
+                        </div> -->
+                        <div class="right">
+                            <div class="name">Degree</div>
+                            <div class="desc">{{ education }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section__title">Skills</div>
+                <div class="skills">
+                    <ul>
+                        {% for skill in skills %}
+                        <li>{{ skill }}</li>
+                        {% endfor %}
+                    </ul>
+                </ div>
+            </div>
+            <div class="section">
+                <div class="section__title">Social Links</div>
+                <div class="social-links">
+                    <p><a href="{{ linkedin }}" target="_blank">LinkedIn</a></p>
+                    <p><a href="{{ github }}" target="_blank">GitHub</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

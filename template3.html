@@ -1,0 +1,80 @@
+<body>
+   <div class="flexContainer"> 
+     
+     <div class="leftColumn"> 
+        <div class="leftRow"> 
+          <img src="{{ photo_filename }}" alt="Profile Picture" width="100%">
+          <p id="name"> {{ first_name }} <br> {{ last_name }} </p>
+          <hr class="HeaderHr" id="leftHr">
+          <hr class="HeaderHr" id="rightHr">
+          <div class="over" id="dotContainer">
+             <span class="dot"></span> 
+             <span class="dot" id="middleOne"></span> 
+             <span class="dot"></span> 
+          </div>
+       </div> 
+        <div class="leftRow">
+          <div id="Cone"> </div>
+          <p class="over" id="Profession">{{ profession }}</p>
+          <div class="Triangle1" id="LeftTriangle"></div>
+          <div class="Triangle2" id="LeftTriangle2"></div>
+          <div class="Triangle1" id="RightTriangle"></div>
+          <div class="Triangle2" id="RightTriangle2"></div>
+        </div> 
+
+        <div class="leftRow" id="LeftBottom"> <!--left column bottom-->
+           <h2 class="left">CONTACT</h2>
+           <hr>
+           <span class="left">{{ phone }}</span>
+           <hr>
+           <span class="left">{{ email }}</span>
+           <hr>
+           
+           <h2 class="left">SKILLS</h2>
+           <ul class="skills">
+               {% for skill in skills %}
+               <li>{{ skill }}</li>
+               {% endfor %}
+           </ul>
+           <hr class="skillBar">
+
+           <h2 class="left">SOCIAL Links</h2>
+           <hr>
+           <p><a href="{{ linkedin }}" target="_blank">LinkedIn</a></p>
+           <p><a href="{{ github }}" target="_blank">GitHub</a></p>
+        </div>
+     </div> 
+   
+     <div class="rightColumn"> <!--start of the container for the right column-->
+       <div class="rightRow" id="rightHeader"> 
+          <h1></h1> 
+          <h2 class="right">ABOUT ME</h2>
+          <p>{{ about_me }}</p>
+       </div>
+      
+       <div class="rightRow">
+        <h2 class="right">WORK EXPERIENCE</h2>
+        <p>{{ experience}}</p>
+    </div>
+   
+      
+       <div class="rightRow">  
+         <h2 class="right">EDUCATION</h2>
+       </div>
+       {% for edu in education %}
+       <div class="containerHl"> 
+         <div class="years"> 
+            <h3>{{ edu.graduation_date }}</h3>
+         </div>
+         <div class="jobs">
+            <h3>{{ edu.degree }}</h3>
+            <h4>{{ edu.institution }}</h4>
+         </div>
+       </div>
+       <div class="containerText">
+         <p>{{ edu.description }}</p>
+       </div>
+       {% endfor %}
+     </div> 
+   </div> 
+</body>

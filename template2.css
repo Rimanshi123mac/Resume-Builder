@@ -1,0 +1,200 @@
+/* General Styling */
+body {
+    background: #f7f7f7; /* Light background for better contrast */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h2, h3 {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Left Section Styling */
+.left-box {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    background-color: #b30000;
+    height: auto;
+    width: 300px;
+    margin: 15px;
+    border-radius: 10px;
+    padding: 15px;
+    color: white;
+}
+
+/* Top-left section with name */
+.top-left {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.name {
+    font-size: 28px;
+    position: absolute;
+    bottom: 10px;
+    left: 16px;
+}
+
+img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Objective section */
+.objective {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #8b0000;
+    border-bottom: 2px solid #fff;
+    color: white;
+    line-height: 1.6;
+}
+
+.objective-img {
+    float: left;
+    border: 3px solid white;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.objective-text {
+    color: white;
+    margin-top: 10px;
+}
+
+/* Contact Info (phone, email) */
+.phone, .email {
+    margin: 20px 0;
+    padding: 10px;
+    border-bottom: 2px solid #fff;
+}
+
+.phone-text, .email-text {
+    text-align: left;
+    font-size: 18px;
+    color: white;
+    margin: 10px 0;
+}
+
+/* Skills and Interests Section Styling */
+.skills, .interest {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    width: 100%; /* Full width within left-box */
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.skills {
+    margin-top: 20px;
+}
+
+.interest {
+    margin-top: 20px;
+}
+
+/* Work Experience Box */
+.work-experience {
+    clear: both;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    background-color: #fff;
+    width: 850px;
+    margin: 20px 15px; /* Move work experience next to the left box */
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.work-img {
+    float: left;
+    background-color: #b30000;
+    height: 50px;
+    width: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.job-box {
+    clear: both;
+    margin: 20px 0;
+    padding: 10px;
+    width: 100%;
+    background-color: #f9f9f9;
+    border-left: 4px solid #b30000;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.job-box:hover {
+    background-color: #f2f2f2;
+}
+
+.job-title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.job-date {
+    color: #b30000;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.job-description {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Education Box */
+.education {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 850px;
+}
+
+.education h3 {
+    margin-bottom: 15px;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #b30000;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .left-box {
+        width: 100%; /* Full width for left box */
+        height: auto;
+        margin: 0;
+        padding: 15px;
+    }
+
+    .work-experience {
+        width: 100%; /* Full width for work experience */
+        margin: 15px 0; /* Adjust margins */
+    }
+
+    /* Skills and Interests */
+    .skills, .interest {
+        width: 100%; /* Full width for both sections */
+        margin: 15px 0; /* Adjust margin */
+    }
+}

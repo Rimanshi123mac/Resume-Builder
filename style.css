@@ -1,0 +1,199 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+/* Container for the entire resume */
+.resume-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Left Section - Smaller part */
+.left-section {
+    width: 25%;
+    padding-right: 20px;
+    border-right: 2px solid #ddd;
+}
+
+.left-section section {
+    margin-bottom: 20px;
+}
+
+.left-section input[type="text"],
+.left-section input[type="file"],
+.left-section textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.left-section input[type="text"]:focus,
+.left-section input[type="file"]:focus,
+.left-section textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+    background-color: #eaf7e1;
+}
+
+/* Right Section - Larger part */
+.right-section {
+    width: 75%;
+    padding-left: 20px;
+}
+
+/* Form and Resume Section Styles */
+.input-form {
+    margin-bottom: 30px;
+}
+
+.input-form h2 {
+    font-size: 1.8rem;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1.1rem;
+    color: #444;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="text"], input[type="url"], input[type="email"], input[type="tel"], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="url"]:focus, input[type="email"]:focus, input[type="tel"]:focus, textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+    background-color: #eaf7e1;
+}
+
+/* Button Styling */
+button {
+    background-color: #4CAF50; /* Green color for buttons */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+.toggle-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.toggle-btn:hover {
+    background-color: #45a049;
+}
+
+.left-section.collapsed {
+    display: none; /* Hide the left section when collapsed */
+}
+
+/* Project Section Styling */
+#projects-section {
+    margin-bottom: 20px;
+}
+
+#projects-section h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.project-entry {
+    margin-bottom: 15px;
+}
+
+.project-entry label {
+    font-size: 1.1rem;
+    color: #444;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.project-entry input[type="text"],
+.project-entry textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.project-entry input[type="text"]:focus,
+.project-entry textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+    background-color: #eaf7e1;
+}
+
+/* Add Project Button */
+#add-project {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#add-project:hover {
+    background-color: #45a049;
+}

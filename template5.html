@@ -1,0 +1,81 @@
+<head>
+    <title>Resume</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/css/template5.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- link normalize here-->
+  </head>
+  <body>
+  
+    <header class="info-details">
+  
+      <h1 class="title-name">{{ first_name }} {{ last_name }}</h1>
+      <br/>
+      <a class="links" href="{{ github }}"><i class="fa fa-github fa-2x"> |</i></a>
+      <a class="links" href="{{ linkedin }}"><i class="fa fa-linkedin fa-2x"> |</i></a>
+      <!-- <a class="links" href="#"><i class="fa fa-safari fa-2x"></i></a> -->
+      <br/>
+      <div class="contact-info">
+        <a class="links" href="mailto:examplemail@mail.com">{{ email }}</a>
+      </div>
+  
+    </header><!--   info details -->
+  
+    <section class="main-content">
+      
+      <div class="container"> 
+        <h2 class="category-titles">Summary</h2><hr>
+        <p class="category-description-main">{{ about_me }}</p>
+      </div>
+      <!-- Summary -->
+  
+      <div class="container">
+        <h2 class="category-titles">Skills</h2><hr>
+        <div class="category-description">{{ skill }} </div>
+      </div>
+      <!-- Skills -->
+      
+      <div class="container">
+        <h2 class="category-titles">Projects</h2><hr>
+        <!-- <p><a href="#" class="primary-titles projects">projectname.com</a></p>
+        <p class="category-description">Web app written in jQuery that lets users draw design on a board much like an etch-a-sketch. Includes different settings such as random colored mode and water color mode</p>
+  
+        <p><a href="#" class="primary-titles projects">projectname.com</a></p>
+        <p class="category-description">Web app written in jQuery that lets users draw design on a board much like an etch-a-sketch. Includes different settings such as random colored mode and water color mode</p> -->
+  
+        <!-- 
+        
+-->
+      <!-- Projects -->
+  
+      <div class="container">
+        <h2 class="category-titles">Professional Experience</h2><hr>
+        
+        <p class="primary-titles prof-expirience">{{ experience }} </p>
+        <!-- <p class="category-details">8/2025 - 10/2025 | Someposition </p>
+        <p class="category-description">
+          Donec viverra nisl quis mattis ornare. Aenean odio metus, aliquam non viverra vel, pharetra non arcu. Pellentesque pretium quam vel gravida mattis. Nulla consectetur massa sed sollicitudin tempor. In hac habitasse platea dictumst. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam ultricies placerat nisl ut malesuada. Morbi varius dui vulputate arcu aliquet, non cursus enim finibus. Nulla ac faucibus lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        </p>
+         -->
+        <!-- <p class="primary-titles prof-expirience">Some Company <span class="location">| SomeCity, CA</span></p>
+        <p class="category-details">8/2025 - 10/2025 | Someposition </p>
+        <p class="category-description">
+          Donec viverra nisl quis mattis ornare. Aenean odio metus, aliquam non viverra vel, pharetra non arcu. Pellentesque pretium quam vel gravida mattis. Nulla consectetur massa sed sollicitudin tempor. In hac habitasse platea dictumst. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam ultricies placerat nisl ut malesuada. Morbi varius dui vulputate arcu aliquet, non cursus enim finibus. Nulla ac faucibus lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. -->
+        <!-- </p>
+        <p class="primary-titles prof-expirience">Some Company <span class="location">| SomeCity, CA</span></p>
+        <p class="category-details">8/2025 - 10/2025 | Someposition </p>
+        <p class="category-description"> -->
+          
+        <!-- </p> -->
+        
+        <div class="container">
+        <h2 class="category-titles">Education</h2><hr>
+        <p class="primary-titles">{{ education }} <span class="location"></span></p>
+          
+  
+      </div>
+      <!-- Education-->
+  
+    </section><!-- main content-->
+      
+  </body>
